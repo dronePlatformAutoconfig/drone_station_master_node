@@ -27,7 +27,7 @@ echo "$node_name.private $private_IP" >> $hostfile
 echo "$node_name.public $public_IP" >> $hostfile
 
 upload() {
-	aws s3 cp $(pwd)/$hostfile s3://${S3_BUCKET}/config
+	aws s3 cp $(pwd)/$hostfile s3://${S3_BUCKET}/config/$hostfile
 }
 
 if [ -f "/tmp/$hostfile" ]; then
